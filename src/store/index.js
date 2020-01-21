@@ -5,10 +5,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    incrementCount: 0,
     fahrenheit: '',
     celsius: ''
   },
   mutations: {
+    incrementCounter: (state) => {
+      state.incrementCount++
+    },
     updateFahrenheit: (state, data) => {
       if(data.match(/^[\d]*[.]?[\d]*$/) && data !== '') {
         state.fahrenheit = (data.trim() * (9 / 5) + 32);

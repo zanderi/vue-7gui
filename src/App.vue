@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <increment></increment>
     <Celsius></Celsius>
     =
     <Fahrenheit></Fahrenheit>
@@ -9,10 +10,12 @@
 <script>
 import Celsius from './components/celsius'
 import Fahrenheit from './components/fahrenheit'
+import Increment from "./components/increment";
 
 export default {
   name: 'app',
   components: {
+    Increment,
     Celsius,
     Fahrenheit
   }
@@ -45,5 +48,8 @@ export default {
     border: 1px solid #ced4da;
     border-radius: .25rem;
     margin-right:.5rem;
+  }
+  .row{
+    margin-bottom: 1rem;
   }
 </style>
