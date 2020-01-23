@@ -11,10 +11,16 @@
 				<router-link to="crud">CRUD</router-link>
 			</li>
 			<li class="list-item">
-				<router-link to=""></router-link>
+				<router-link disabled to="">Flight Booker</router-link>
 			</li>
 			<li class="list-item">
-				<router-link to=""></router-link>
+				<router-link disabled to="">Timer</router-link>
+			</li>
+			<li class="list-item">
+				<router-link disabled to="">Circle Drawer</router-link>
+			</li>
+			<li class="list-item">
+				<router-link disabled to="">Cells</router-link>
 			</li>
 		</ul>
 	</nav>
@@ -33,6 +39,10 @@
 			color:#999999;
 			text-decoration: none;
 			font-weight: bold;
+			&[disabled], &[disabled]:hover{
+				cursor:default;
+				color:#dfdfdf;
+			}
 			&:hover{
 				color:darken(#999999,25%);
 			}
