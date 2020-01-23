@@ -7,7 +7,11 @@ export default new Vuex.Store({
   state: {
     incrementCount: 0,
     fahrenheit: '',
-    celsius: ''
+    celsius: '',
+    crud: {
+      filter: '',
+
+    }
   },
   mutations: {
     incrementCounter: (state) => {
