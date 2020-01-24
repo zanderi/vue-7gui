@@ -9,9 +9,12 @@ export default new Vuex.Store({
 		fahrenheit: '',
 		celsius: '',
 		crud: {
+			nameFirst: '',
+			nameLast: '',
 			filter: '',
 			users: [],
-			userExists: false
+			userExists: false,
+			updateDeleteDisabled: true
 		}
 	},
 	mutations: {
@@ -39,6 +42,8 @@ export default new Vuex.Store({
 					data.selected = false;
 					state.crud.users.push(data)
 			}
+			state.crud.nameFirst = '';
+			state.crud.nameLast = '';
 		},
 		crudUpdateUserTable: (state, data) => {
 			state.crud.users.find(user => {
@@ -51,12 +56,17 @@ export default new Vuex.Store({
 		crudDeleteUser: (state) => {
 			state.crud.users = state.crud.users.filter(user => {
 				return !user.selected
-			})
+			});
+			state.crud.nameFirst = '';
+			state.crud.nameLast = '';
 		},
 		crudToggleSelectedUser: (state, data) => {
 			state.crud.users.forEach(user => (
 				(user.fullName === data.fullName) ? user.selected = true : user.selected = false
 			));
+			state.crud.nameFirst = data.first;
+			state.crud.nameLast = data.last;
+			state.crud.updateDeleteDisabled = false;
 		}
 	},
 	actions: {},
@@ -77,6 +87,12 @@ export default new Vuex.Store({
 			else {
 				return state.crud.users
 			}
+		},
+		crudCreateDisabled: (state) => {
+			return !(state.crud.nameLast.trim() !== '' && state.crud.nameFirst.trim() !== '')
+		},
+		crudUpdateDeleteDisabled: (state) => {
+			return state.crud.updateDeleteDisabled
 		}
 	},
 	modules: {}
