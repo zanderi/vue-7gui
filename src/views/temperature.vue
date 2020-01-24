@@ -1,9 +1,9 @@
 <template>
-	<div>
+	<section class="comp-temp">
 		<celsius></celsius>
     =
     <fahrenheit></fahrenheit>
-	</div>
+	</section>
 </template>
 
 <script type="text/javascript">
@@ -21,5 +21,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-	
+	.comp-temp{
+		margin:15px;
+	}
 </style>

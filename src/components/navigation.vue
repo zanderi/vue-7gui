@@ -11,16 +11,16 @@
 				<router-link to="crud">CRUD</router-link>
 			</li>
 			<li class="list-item">
-				<router-link disabled to="">Flight Booker</router-link>
+				<router-link disabled tabindex="-1" to="">Flight Booker</router-link>
 			</li>
 			<li class="list-item">
-				<router-link disabled to="">Timer</router-link>
+				<router-link disabled tabindex="-1" to="">Timer</router-link>
 			</li>
 			<li class="list-item">
-				<router-link disabled to="">Circle Drawer</router-link>
+				<router-link disabled tabindex="-1" to="">Circle Drawer</router-link>
 			</li>
 			<li class="list-item">
-				<router-link disabled to="">Cells</router-link>
+				<router-link disabled tabindex="-1" to="">Cells</router-link>
 			</li>
 		</ul>
 	</nav>
@@ -30,18 +30,20 @@
 	
 </script>
 
-<style lang="scss" scoped>	
+<style lang="scss" scoped>
 	nav{
 		border-bottom: 1px solid #cdcdcd;
-		margin-bottom: 30px;
+		margin-bottom: 30px;		
 		a{
+			display: block;
 			padding:.5rem;
 			color:#999999;
 			text-decoration: none;
 			font-weight: bold;
-			&[disabled], &[disabled]:hover{
+			&[disabled], &[disabled]:hover, &[disabled]:focus{
 				cursor:default;
 				color:#dfdfdf;
+				outline:none;
 			}
 			&:hover{
 				color:darken(#999999,25%);
