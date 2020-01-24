@@ -59,10 +59,11 @@ button {
 	background-image: none;
 	border-color: #6c757d;
 
-	&:hover, &:active {
+	&:hover, &:active, &:focus {
 		color: #fff;
 		background-color: #6c757d;
 		border-color: #6c757d;
+		outline: none;
 	}
 
 	&[disabled], &[disabled]:hover {
