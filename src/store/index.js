@@ -59,6 +59,7 @@ export default new Vuex.Store({
 			});
 			state.crud.nameFirst = '';
 			state.crud.nameLast = '';
+			state.crud.updateDeleteDisabled = true;
 		},
 		crudToggleSelectedUser: (state, data) => {
 			state.crud.users.forEach(user => (
