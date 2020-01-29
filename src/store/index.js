@@ -23,12 +23,14 @@ export default new Vuex.Store({
 		},
 		updateFahrenheit: (state, data) => {
 			if (data.match(/^[\d]*[.]?[\d]*$/) && data !== '') {
-				state.fahrenheit = (data.trim() * (9 / 5) + 32);
+				state.fahrenheit = parseFloat(data.trim() * (9 / 5) + 32);
+				state.celsius = parseFloat(data.trim())
 			}
 		},
 		updateCelsius: (state, data) => {
 			if (data.match(/^[\d]*[.]?[\d]*$/)) {
-				state.celsius = (data.trim() - 32) * (5 / 9);
+				state.celsius = parseFloat((data.trim() - 32) * (5 / 9));
+				state.fahrenheit = parseFloat(data.trim())
 			}
 		},
 		crudCreateUser: (state, data) => {

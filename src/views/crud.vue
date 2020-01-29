@@ -109,7 +109,9 @@
 
 <style scoped lang="scss">
 	.comp-crud {
-		margin: 15px;
+		margin: 0 auto;
+		padding:0 15px 15px;
+		max-width: 700px;
 	}
 
 	.users-list {
