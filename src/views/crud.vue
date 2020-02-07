@@ -9,7 +9,7 @@
 			<div class="col-6 users-list">
 				<ul class="list-unstyled">
 					<li class="list-item" v-for="(person, index) in users" :key="index">
-						<button type="button" v-on:click="() => { selectedIndividual(person) }"
+						<button type="button" @click="() => { selectedIndividual(person) }"
 										:class="{'active' : person.selected}">{{person.fullName}}
 						</button>
 					</li>

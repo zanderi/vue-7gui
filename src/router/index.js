@@ -22,10 +22,10 @@ const routes = [
 		name: 'crud',
 		component: () => import ('../views/crud')
 	}
-]
+];
 
 const router = new VueRouter({
 	routes
-})
+});
 
 export default router

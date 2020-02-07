@@ -28,8 +28,8 @@ export default new Vuex.Store({
 			}
 		},
 		updateCelsius: (state, data) => {
-			if (data.match(/^[\d]*[.]?[\d]*$/)) {
-				state.celsius = parseFloat((data.trim() - 32) * (5 / 9));
+			if (data.match(/^[\d]*[.]?[\d]*$/) && data !== '') {
+				state.celsius = parseFloat((data - 32) * (5 / 9));
 				state.fahrenheit = parseFloat(data.trim())
 			}
 		},
@@ -65,7 +65,7 @@ export default new Vuex.Store({
 		},
 		crudToggleSelectedUser: (state, data) => {
 			state.crud.users.forEach(user => (
-				(user.fullName === data.fullName) ? user.selected = true : user.selected = false
+				user.selected = user.fullName === data.fullName
 			));
 			state.crud.nameFirst = data.first;
 			state.crud.nameLast = data.last;
